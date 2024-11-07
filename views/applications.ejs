@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HireHub</title>
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+          <script src="https://kit.fontawesome.com/ac4c7d0dfa.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo"></div>
+                <ul class="menu">
+                <li class="active">
+                        <a href="/compdash"><i class="fa-solid fa-border-all"></i><span>All Jobs</span></a>
+                </li>
+                <li>
+                    <a href="/compro"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+                </li>
+           
+                <li>
+                    <a href="/newpost"><i class="fa-solid fa-plus"></i><span>Post Job</span></a>
+                </li>
+                  <li>
+                    <a href="/applications"><i class="fa-solid fa-users"></i><span>Applicants</span></a>
+                </li>
+           
+          
+                <!--<li>-->
+                <!--    <a href="/settings"><i class="fa fa-cog"></i><span>Settings</span></a>-->
+                <!--</li>-->
+                <li class="logout">
+                    <a href="/logout"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+                    <span>HireHub</span>
+                    <h2>Find the rigt job for you</h2>
+                </div>
+                <!-- <div class="user--info">
+                    <div class="search--box">
+                        <i></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <img src="img.jpg" alt="">
+                </div> -->
+            </div>
+
+
+
+        <div class="tabular--wrapper">
+            <h3 class="main--title">Members data</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                         
+                            <th>email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% members.forEach( (item, index) =>{ %>
+                      
+                        <tr>
+                            <td><%= index + 1%></td>
+                           
+                            <td><%= item.email%></td>
+                            <td><button><a href="/profile/<%= item.email%>">Details</a></button></td>
+                        </tr>
+                        
+                        <% });
+                        %>
+                       
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">Total: <%= count%> members</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>

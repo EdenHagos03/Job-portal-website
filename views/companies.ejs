@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HireHub</title>
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+           <script src="https://kit.fontawesome.com/ac4c7d0dfa.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo"></div>
+             <ul class="menu">
+                <li class="active">
+                        <a href="/dashboard"><i class="fa-solid fa-border-all"></i><span>All Jobs</span></a>
+                </li>
+                <li>
+                    <a href="/technology"><i class="fa-solid fa-laptop-code"></i><span>Technology</span></a>
+                </li>
+                <li>
+                    <a href="/healthcare"><i class="fa-solid fa-user-doctor"></i><span>Healthcare</span></a>
+                </li>
+                <li>
+                    <a href="/education"><i class="fa-solid fa-person-chalkboard"></i> <span>Education</span></a>
+                </li>
+                <li>
+                    <a href="/marketing"><i class="fa-solid fa-magnifying-glass-dollar"></i><span>Marketing</span></a>
+                </li>
+                  <li >
+                    <a href="/construction"><i class="fa-solid fa-helmet-safety"></i> <span>Construction</span></a>
+                </li>
+                   <li>
+                    <a href="/arts"><i class="fa-brands fa-artstation"></i><span>Creative Arts</span></a>
+                </li>
+               
+                    <li>
+                    <a href="/others"><i class="fa-solid fa-ellipsis"></i><span>Others</span></a>
+                </li>
+          
+                <!--<li>-->
+                <!--    <a href="/settings"><i class="fa fa-cog"></i><span>Settings</span></a>-->
+                <!--</li>-->
+                <li class="logout">
+                    <a href="/logout"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+                    <span>HireHub</span>
+                    <h2>Find the right job for you</h2>
+                </div>
+                <!-- <div class="user--info">
+                    <div class="search--box">
+                        <i></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <img src="img.jpg" alt="">
+                </div> -->
+            </div>
+
+
+
+        <div class="tabular--wrapper">
+            <h3 class="main--title">Members data</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                       
+                            <th>email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% members.forEach( (item, index) =>{ %>
+                      
+                        <tr>
+                            <td><%= index + 1%></td>
+                            <td><%= item.name%></td>
+                            <td><%= item.phone%></td>
+                         
+                            <td><%= item.email%></td>
+                            <td><button><a href="/comprofile/<%= item.name%>">Details</a></button></td>
+                        </tr>
+                        
+                        <% });
+                        %>
+                       
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">Total: <%= count%> members</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>
