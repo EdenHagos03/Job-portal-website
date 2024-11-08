@@ -28,7 +28,7 @@ Welcome to the Job Portal website, a platform where employers can post job listi
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/job-portal.git
+  https://github.com/EdenHagos03/Job-portal-website.git
     ```
 2. Navigate to the project directory:
     ```bash
